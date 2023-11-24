@@ -20,8 +20,8 @@ def run_ml_app():
         if price<=154:
             st.text('자동차를 구매하기 어렵습니다')
         else:
-            st.text('이 고객은 {}금액정도면 구매 가능 합니다'.format(math.ceil(price)))
-        st.text(y_pred)
+            st.text('이 고객은 {}원정도면 구매 가능 합니다'.format(math.ceil(price)))
+        
 
     else:
         st.text('')
