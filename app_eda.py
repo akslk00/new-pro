@@ -9,42 +9,56 @@ def run_eda_app():
     #df=df.sample(n=10000,random_state=1000)
     st.dataframe(df)
 
-    st.text('평수가 가장 넓은집의 스펙모음')
     square=df.loc[df['SquareFeet']==2999,]
-    st.dataframe(square)
 
-
-    st.text('평수가 가장 좁은집의 스펙모음')
     squaremin=df.loc[df['SquareFeet'] == 1000,]
-    st.dataframe(squaremin)
-
     
-    st.text('가장 금액이 높은 주택')
     prmax=df.loc[df['Price']==492195.2599720151,]
-    st.dataframe(prmax)
 
-    
-    st.text('금액이 가장싼 주택')
     prmin=df.loc[df['Price']==154.77912007166017,]
-    st.dataframe(prmin)
-
     
-    st.text('침실이 가장 많은 집 모음')
     bdmax=df.loc[df['Bedrooms']==5,]
-    st.dataframe(bdmax)
 
-    
-    st.text('침실이 가장 적은 집 모음')
     bdmin=df.loc[df['Bedrooms']==2,]
-    st.dataframe(bdmin)
 
-    st.text('화장실이 가장 많은 집 모음')
     bsmax=df.loc[df['Bathrooms']==3,]
-    st.dataframe(bsmax)
 
-    st.text('화장실이 가장 적은 집 모음')
     bsmin=df.loc[df['Bathrooms']==1,]
-    st.dataframe(bsmin)
+
+
+    choice = ['평수가 가장 넓은집의 스펙모음','평수가 가장 좁은집의 스펙모음'
+              ,'가장 금액이 높은 주택','금액이 가장싼 주택'
+              ,'침실이 가장 많은 집 모음','침실이 가장 적은 집 모음'
+              ,'화장실이 가장 많은 집 모음','화장실이 가장 적은 집 모음']
+    my_choice = st.selectbox('원하는 조건을 선택하시오', choice)
+
+    if my_choice == choice[0] :
+        st.text('평수가 가장 넓은집의 스펙모음')
+        st.dataframe(square)
+    elif my_choice == choice[1] :
+        st.text('평수가 가장 좁은집의 스펙모음')
+        st.dataframe(squaremin)
+    elif my_choice == choice[2]:
+        st.text('가장 금액이 높은 주택')
+        st.dataframe(prmax)
+    elif my_choice == choice[3]:
+        st.text('금액이 가장싼 주택')
+        st.dataframe(prmin)
+    elif my_choice == choice[4]:
+        st.text('침실이 가장 많은 집 모음')
+        st.dataframe(bdmax)
+    elif my_choice == choice[5]:
+        st.text('침실이 가장 적은 집 모음')
+        st.dataframe(bdmin)
+    elif my_choice == choice[6]:
+        st.text('화장실이 가장 많은 집 모음')
+        st.dataframe(bsmax)
+    elif my_choice == choice[7]:
+        st.text('화장실이 가장 적은 집 모음')
+        st.dataframe(bsmin)
+
+
+
 
     st.text('조건에 적합한 집 검색')
 
