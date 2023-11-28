@@ -8,6 +8,7 @@ def run_eda_app():
     df=df.loc[df['Price']>0,]
     #df=df.sample(n=10000,random_state=1000)
     st.dataframe(df)
+    st.text('출처 : https://www.kaggle.com/datasets/muhammadbinimran/housing-price-prediction-data/data')
 
     square=df.loc[df['SquareFeet']==2999,]
 
